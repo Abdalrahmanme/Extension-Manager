@@ -1,0 +1,237 @@
+* {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ebf4fd;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: black;
+  padding: 20px;
+}
+
+.page {
+  width: 1000px;
+  .search {
+    background-color: #fcfdff;
+    box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.1), -1px -1px 1px rgb(0, 0, 0, 0.1),
+      0px 0px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    .logo {
+      .light {
+        width: 145px;
+      }
+      .dark {
+        display: none;
+      }
+    }
+    .pageMode {
+      .dark {
+        background-color: #eeeced;
+        box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.1),
+          -1px -1px 1px rgb(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        &:active {
+          outline: 2px solid #c06c74;
+          border: #ebf4fd 1px solid;
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: rgb(255, 255, 255, 0.2);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            border-radius: 10px;
+          }
+        }
+        &:hover {
+          background-color: #ddd9da;
+        }
+      }
+      .light {
+        display: none;
+      }
+    }
+  }
+  .extensions-container {
+    margin-top: 40px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      height: 60%;
+      h1 {
+        font-size: 25px;
+      }
+      ul {
+        margin-right: 10px;
+        display: flex;
+        list-style: none;
+        li {
+          margin-right: 10px;
+          box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.1),
+            -1px -1px 1px rgb(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.5);
+          background-color: #fafdff;
+          padding: 10px 15px;
+          border-radius: 30px;
+          cursor: pointer;
+          position: relative;
+          transition: 0.3s;
+          &:hover {
+            opacity: .5;
+          }
+          &.active {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            &:hover {
+              opacity: 1;
+            }
+          }
+          &:active {
+            outline: 2px solid #c06c74;
+            border: #ebf4fd 1px solid;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 30px;
+              width: 100%;
+              height: 100%;
+              background-color: rgb(255, 255, 255, 0.2);
+            }
+          }
+        }
+      }
+    }
+    .extensions {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+      .extension {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fcfdff;
+        box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.1),
+          -1px -1px 1px rgb(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgb(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        .topo {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 30px;
+          height: 60%;
+          img {
+            margin-right: 20px;
+            align-self: flex-start;
+          }
+          .txt {
+            h3 {
+              font-size: 15px;
+            }
+            p {
+              font-size: 14px;
+              color: #888;
+              width: 200px;
+              margin-top: 5px;
+            }
+          }
+        }
+        .bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          button {
+            background-color: white;
+            border: 1px solid #888;
+            padding: 5px 15px;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            margin-right: 50%;
+            transition: .3s;
+            &:hover {
+              background-color: red;
+              border: none;
+              color: white;
+            }
+            &:active {
+              outline: 2px solid #c06c74;
+              border: #ebf4fd 1px solid;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 30px;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(255, 255, 255, 0.2);
+              }
+            }
+          }
+          .toggle {
+            width: 30px;
+            height: 15px;
+            background-color: #c8c8ca;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s right, 0.3s background-color;
+            &::before {
+              content: "";
+              position: absolute;
+              background-color: white;
+              width: 12px;
+              height: 12px;
+              top: 50%;
+              left: 2px;
+              transform: translateY(-52%);
+              border-radius: 50%;
+            }
+            &.active {
+              background-color: #cb2523;
+              &::before {
+                left: 53%;
+              }
+            }
+            &:active {
+              outline: 2px solid #b3666c;
+              border: #ebf4fd 2px solid;
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 30px;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(255, 255, 255, 0.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

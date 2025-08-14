@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/dark.css" />
+
+    <style>
+      @media (max-width: 565px) {
+        .extensions-container {
+          .top {
+            flex-direction: column !important;
+            align-items: center;
+            ul {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="search">
+        <div class="logo">
+          <img class="light" src="Images/logo.svg" alt="" />
+          <img class="dark" src="Images/dark-logo.svg" alt="" />
+        </div>
+        <div class="pageMode">
+          <div class="dark on">
+            <img src="Images/icon-moon.svg" alt="Dark Mode" />
+          </div>
+          <div class="light">
+            <img src="Images/icon-sun.svg" alt="Light Mode" />
+          </div>
+        </div>
+      </div>
+      <div class="extensions-container">
+        <div class="top">
+          <h1>Extensions List</h1>
+          <ul>
+            <li class="all active" data-string="all">All</li>
+            <li class="activiton" data-string="active">Active</li>
+            <li class="inactive" data-string="inactive">Inactive</li>
+          </ul>
+        </div>
+        <div class="extensions"></div>
+      </div>
+    </div>
+    <script src="JS/main.js"></script>
+  </body>
+</html>

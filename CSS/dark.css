@@ -1,0 +1,252 @@
+* {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: #2d3248;
+  --secondery-color: #060c24;
+}
+
+body {
+  background-color: var(--secondery-color);
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: white;
+  padding: 20px;
+}
+
+.page {
+  width: 1000px;
+  .search {
+    background-color: #1f2535;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    .logo {
+      .light {
+        display: none;
+      }
+      .dark {
+        width: 145px;
+      }
+    }
+    .pageMode {
+      .dark {
+        display: none;
+      }
+      .light {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--main-color);
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        &:active {
+          outline: 2px solid #c06c74;
+          border: var(--secondery-color) 1px solid;
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: rgb(255, 255, 255, 0.2);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            border-radius: 10px;
+          }
+        }
+        &:hover {
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgb(255, 255, 255, 0.5);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+  .extensions-container {
+    margin-top: 40px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      h1 {
+        font-size: 25px;
+      }
+      ul {
+        margin-right: 10px;
+        display: flex;
+        list-style: none;
+        li {
+          margin-right: 10px;
+          background-color: #2d3248;
+          padding: 10px 15px;
+          border-radius: 30px;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background-color: rgb(255, 255, 255, 0.5);
+              border-radius: 30px;
+            }
+          }
+          &.active {
+            background-color: red;
+            color: black;
+            font-weight: bold;
+            &:hover {
+              &::after {
+                content: "";
+                z-index: -1;
+              }
+            }
+          }
+          &:active {
+            outline: 2px solid #c06c74;
+            border: var(--secondery-color) 1px solid;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 30px;
+              width: 100%;
+              height: 100%;
+              background-color: rgb(255, 255, 255, 0.2);
+            }
+          }
+        }
+      }
+    }
+    .extensions {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+      .extension {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #1f2535;
+        border: 1px solid rgb(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        .topo {
+          display: flex;
+          align-items: center;
+          height: 60%;
+          margin-bottom: 30px;
+          img {
+            margin-right: 20px;
+            align-self: flex-start;
+          }
+          .txt {
+            h3 {
+              font-size: 15px;
+            }
+            p {
+              font-size: 14px;
+              color: rgb(255, 255, 255, 0.6);
+              font-weight: 300;
+              width: 180px;
+              margin-top: 5px;
+            }
+          }
+        }
+        .bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          button {
+            background-color: var(--secondery-color);
+            color: white;
+            padding: 5px 15px;
+            border: 2px solid rgb(255, 255, 255, 0.2);
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            margin-right: 50%;
+            transition: .3s;
+            &:hover {
+              background-color: red;
+            }
+            &:active {
+              outline: 2px solid #c06c74;
+              border: var(--secondery-color) 1px solid;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 30px;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(255, 255, 255, 0.2);
+              }
+            }
+          }
+          .toggle {
+            width: 30px;
+            height: 15px;
+            background-color: #50556a;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s right, 0.3s background-color;
+            &::before {
+              content: "";
+              position: absolute;
+              background-color: white;
+              width: 12px;
+              height: 12px;
+              top: 50%;
+              left: 2px;
+              transform: translateY(-52%);
+              border-radius: 50%;
+            }
+            &.active {
+              background-color: #ee5b53;
+              &::before {
+                left: 50%;
+              }
+            }
+            &:active {
+              outline: 2px solid #b3666c;
+              border: var(--secondery-color) 2px solid;
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 30px;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(255, 255, 255, 0.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
