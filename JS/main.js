@@ -26,7 +26,7 @@ let extensionsContainer = document.querySelector(".extensions");
 let ul = document.querySelector(".top ul");
 
 window.onload = function () {
-  fetch("../data.json")
+  fetch("https://raw.githubusercontent.com/Abdalrahmanme/Extension-Manager/refs/heads/main/data.json")
     .then((reuslt) => {
       return reuslt.json();
     })
