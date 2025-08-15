@@ -169,7 +169,6 @@ body {
             position: relative;
             cursor: pointer;
             margin-right: 50%;
-            transition: .3s;
             &:hover {
               background-color: red;
               border: none;

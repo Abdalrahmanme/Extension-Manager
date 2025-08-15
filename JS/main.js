@@ -68,6 +68,10 @@ window.onload = function () {
           extension.classList.toggle("active");
         };
 
+        button.onclick = function () {
+          this.parentElement.parentElement.remove()
+        }
+
         if (result[i].isActive) {
           extension.classList.toggle("active");
           toggle.classList.add("active");
