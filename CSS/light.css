@@ -91,7 +91,6 @@ body {
           border-radius: 30px;
           cursor: pointer;
           position: relative;
-          transition: 0.3s;
           &:hover {
             opacity: .5;
           }
